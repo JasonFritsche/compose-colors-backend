@@ -20,11 +20,9 @@ export class ColorsService {
 
   async getColorPalettes(): Promise<ColorPaletteEntity[]> {
     this._colorsRepository.find({}).then((palettes) => {
-      console.log(palettes);
       palettes.forEach((palette) => {
         palette.colors.forEach((color) => {
           JSON.parse(color);
-          console.log(color);
         });
       });
     });
